@@ -1,0 +1,28 @@
+{
+  "name": "noise-generator",
+  "version": "1.0.0",
+  "description": "Generate background noise with varying volume",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tape ./test/*.spec.js | tap-spec"
+  },
+  "author": "Aram Drevekenin <grimsniffer@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "JSONStream": "^1.3.2",
+    "electron-spawn": "^5.0.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "proxyquire": "^1.8.0",
+    "sinon": "^4.3.0",
+    "standard": "^10.0.3",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  },
+  "standard": {
+    "globals": [
+      "Audio"
+    ]
+  }
+}
