@@ -4,6 +4,7 @@
   "description": "Generate background noise with varying volume",
   "main": "index.js",
   "scripts": {
+    "prepare": "patch-package",
     "test": "standard && tape ./test/*.spec.js | tap-spec"
   },
   "author": "Aram Drevekenin <grimsniffer@gmail.com>",
@@ -14,6 +15,7 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
+    "patch-package": "^5.1.1",
     "proxyquire": "^1.8.0",
     "sinon": "^4.3.0",
     "standard": "^10.0.3",
