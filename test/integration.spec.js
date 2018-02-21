@@ -25,7 +25,7 @@ test('Instantiating plays files', async t => {
       stdout: PassThrough({objectMode: true})
     }
     const receivedSixMessages = receiveMessageCount(6, electronSpawn.stdin)
-    const noiseGenerator = mockNoiseGenerator(electronSpawn)
+    const { noiseGenerator } = mockNoiseGenerator(electronSpawn)
     mockElectronApp(electronSpawn, AudioSpy)()
     noiseGenerator(`${__dirname}/fixtures`)
     await receivedSixMessages // instantiate 2 files: 2 opens, 2 plays, 2 loops
@@ -51,7 +51,7 @@ test('Can change volume on the fly', async t => {
       stdout: PassThrough({objectMode: true})
     }
     const receivedEightMessages = receiveMessageCount(8, electronSpawn.stdin)
-    const noiseGenerator = mockNoiseGenerator(electronSpawn)
+    const { noiseGenerator } = mockNoiseGenerator(electronSpawn)
     mockElectronApp(electronSpawn, AudioSpy)()
     const noise = noiseGenerator(`${__dirname}/fixtures`)
     noise(0.5, 0.7)
@@ -75,7 +75,7 @@ test('ERROR - sending too many args throws', async t => {
       stderr: PassThrough({objectMode: true}),
       stdout: PassThrough({objectMode: true})
     }
-    const noiseGenerator = mockNoiseGenerator(electronSpawn)
+    const { noiseGenerator } = mockNoiseGenerator(electronSpawn)
     mockElectronApp(electronSpawn, AudioSpy)()
     const noise = noiseGenerator(`${__dirname}/fixtures`)
     t.throws(
@@ -98,7 +98,7 @@ test('ERROR - sending too few args throws', async t => {
       stderr: PassThrough({objectMode: true}),
       stdout: PassThrough({objectMode: true})
     }
-    const noiseGenerator = mockNoiseGenerator(electronSpawn)
+    const { noiseGenerator } = mockNoiseGenerator(electronSpawn)
     mockElectronApp(electronSpawn, AudioSpy)()
     const noise = noiseGenerator(`${__dirname}/fixtures`)
     t.throws(
