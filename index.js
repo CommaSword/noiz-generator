@@ -1,7 +1,7 @@
 'use strict'
 
 const fs = require('fs')
-const Audio = require('./lib/node-audio-element.js')
+const createAudio = require('./lib/node-audio-element.js')
 
 function isAudioFile (filename) {
   // TODO: properly
@@ -10,6 +10,7 @@ function isAudioFile (filename) {
 
 module.exports = {
   noiseGenerator (dir) {
+    const Audio = createAudio()
     const files = fs.readdirSync(dir)
     const audioFileNames = files.filter(isAudioFile)
     const audioFiles = audioFileNames.map(filename => {
