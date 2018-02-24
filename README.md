@@ -4,20 +4,21 @@ Generate background noise with varying volume (work in progress)
 ## usage
 
 ```javascript
-const { noiseGenerator } = require('noise-generator')
+const { noiseGenerator } = require('./')
 
-const dir = '/path/to/mp3' // dir contains two mp3 files
-const noise = noiseGenerator(dir)
+const dir = '/path/to/mp3'; // dir contains two mp3 files
 
-noise(0.5, 0.5) // set both files at 50% volume
-noise(0, 1) // mute first file and set second file to 100% volume
+(async () => {
+  const noise = await noiseGenerator(dir)
+  await noise(0.5, 0.5) // set both files at 50% volume
+  await noise(0, 1) // mute first file and set second file to 100% volume
 
-// ...or whatever
-for (let i = 0; i < 10000; i++) {
-  setTimeout(() => {
-    noise(1, Math.random())
-  }, i * 100)
-}
+  // ...or whatever
+  for (let i = 0; i < 10000; i++) {
+    await noise(Math.random(), Math.random())
+    await new Promise(resolve => setTimeout(resolve, 100))
+  }
+})()
 
 ```
 
