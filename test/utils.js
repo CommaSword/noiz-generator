@@ -9,16 +9,5 @@ module.exports = {
     const base64 = Buffer.from(blob).toString('base64')
     const uri = audioUriPrefix + base64
     return uri
-  },
-  receiveMessageCount (count, stream) {
-    return new Promise(resolve => {
-      let messageCount = 0
-      stream.on('data', d => {
-        messageCount++
-        if (messageCount === count) {
-          return resolve()
-        }
-      })
-    })
   }
 }
