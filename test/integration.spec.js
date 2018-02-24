@@ -128,7 +128,7 @@ test('ERROR - play command times out properly', async t => {
     const { noiseGenerator } = mockNoiseGenerator(electronSpawn)
     mockElectronApp(electronSpawn, AudioSpy)()
     try {
-      await noiseGenerator(`${__dirname}/fixtures`),
+      await noiseGenerator(`${__dirname}/fixtures`)
       t.fail('did not throw when play hangs')
     } catch (e) {
       t.equals(e.message, 'timed out waiting for electron process', 'proper message thrown')
@@ -160,7 +160,7 @@ test('ERROR - loop command times out properly', async t => {
     const { noiseGenerator } = mockNoiseGenerator(electronSpawn)
     mockElectronApp(electronSpawn, AudioSpy)()
     try {
-      await noiseGenerator(`${__dirname}/fixtures`),
+      await noiseGenerator(`${__dirname}/fixtures`)
       t.fail('did not throw when loop hangs')
     } catch (e) {
       t.equals(e.message, 'timed out waiting for electron process', 'proper message thrown')
