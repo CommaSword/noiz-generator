@@ -1,5 +1,5 @@
 {
-  "name": "noise-generator",
+  "name": "noiz-generator",
   "version": "1.0.0",
   "description": "Generate background noise with dynamic volume",
   "main": "index.js",
