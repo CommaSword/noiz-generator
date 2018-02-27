@@ -1,7 +1,7 @@
 'use strict'
 
 const fs = require('fs')
-const createAudio = require('./lib/node-audio-element.js')
+const { createAudio } = require('node-mp3-player')
 
 function isAudioFile (filename) {
   return /\.mp3$/.test(filename)
@@ -9,14 +9,10 @@ function isAudioFile (filename) {
 
 function audioFileLoader (dir, Audio) {
   return async function loadAudioFile (filename) {
-    const aud = new Audio(`${dir}/${filename}`)
-    try {
-      await aud.play()
-      await aud.loop(true)
-      return aud
-    } catch (e) {
-      throw new Error('timed out waiting for electron process')
-    }
+    const aud = await Audio(`${dir}/${filename}`)
+    await aud.play()
+    await aud.loop(true)
+    return aud
   }
 }
 
@@ -39,9 +35,7 @@ module.exports = {
         volumes.map((value, i) => {
           return audioFiles[i].volume(value)
         })
-      ).catch((e) => {
-        throw new Error('timed out waiting for electron process')
-      })
+      )
     }
   }
 }
