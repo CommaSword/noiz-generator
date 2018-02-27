@@ -1,5 +1,9 @@
 # noise-generator
-Generate background noise with varying volume (work in progress)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://travis-ci.org/CommaSword/noise-generator.svg?branch=master)](https://travis-ci.org/CommaSword/noise-generator)
+[![Coverage Status](https://coveralls.io/repos/github/CommaSword/noise-generator/badge.svg?branch=master)](https://coveralls.io/github/CommaSword/noise-generator?branch=master)
+
+Generate background noise with varying volume from a directory of mp3 files
 
 ## usage
 
@@ -22,6 +26,9 @@ const dir = '/path/to/mp3'; // dir contains two mp3 files
 
 ```
 
-## status
+## Contributing
 
-Check out the issues to follow the progress
+Yes please!
+
+## License
+MIT
