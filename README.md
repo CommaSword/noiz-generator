@@ -4,7 +4,7 @@ Generate background noise with varying volume (work in progress)
 ## usage
 
 ```javascript
-const { noiseGenerator } = require('./')
+const { noiseGenerator } = require('noise-generator')
 
 const dir = '/path/to/mp3'; // dir contains two mp3 files
 
